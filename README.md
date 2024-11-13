@@ -16,3 +16,13 @@ This code loads shellcode embedded within the application’s resources, decodes
 5- Writing and Executing Shellcode in Memory: NtWriteVirtualMemory is used to copy the shellcode into the allocated memory region and A new thread is created with NtCreateThreadEx, pointing to the memory block containing the shellcode.
 
 6- Execution Wait: NtWaitForSingleObject is used to wait indefinitely for the shellcode to execute in the new thread.
+
+## Instructions
+Install 2 libraries : go get "golang.org/x/sys/windows" and go get "github.com/ASP4RUX/Hades/pkg/Hades"
+Install RSRC --> go install github.com/akavel/rsrc@latest
+Modify manifest.txt file using hex-encoded shellcode inside the characters (#!) and ($!).
+RSRC --> rsrc -manifest manifiesto.txt
+Compile --> go build -ldflags="-H=windowsgui -s -w"
+
+![imagen](https://github.com/user-attachments/assets/467a3913-0a1a-4022-b40f-a1d0fccc62bf)
+
