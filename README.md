@@ -1,9 +1,9 @@
 # Bypass EDR / AV 
 
-# Summary
+## Summary
 This code loads shellcode embedded within the application’s resources, decodes it, and executes it directly in memory by leveraging Windows API calls. Functions and variables are configured to handle memory structures and permissions, enabling it to create a thread and execute the shellcode.
 
-# Techniques Used
+## Techniques Used
 
 1- Loading and Extracting Resources: It uses FindResourceW and LoadResource functions to locate and load resources embedded within the binary. The function ReturnShellcode() leverages MAKEINTRESOURCE to access a type 24 resource (specific to Windows) and extract the shellcode contained between delimiters (#! and $!).
 
