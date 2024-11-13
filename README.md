@@ -19,9 +19,13 @@ This code loads shellcode embedded within the application’s resources, decodes
 
 ## Instructions
 Install 2 libraries : go get "golang.org/x/sys/windows" and go get "github.com/ASP4RUX/Hades/pkg/Hades"
+
 Install RSRC --> go install github.com/akavel/rsrc@latest
+
 Modify manifest.txt file using hex-encoded shellcode inside the characters (#!) and ($!).
+
 RSRC --> rsrc -manifest manifiesto.txt
+
 Compile --> go build -ldflags="-H=windowsgui -s -w"
 
 ![imagen](https://github.com/user-attachments/assets/467a3913-0a1a-4022-b40f-a1d0fccc62bf)
